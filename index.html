@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Extensions</title>
+    <style>
+
+        body {
+            background-color: rgb(189, 189, 189);
+        }
+        .popup {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 30px;
+            background-color: rgb(189, 189, 189);
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+            min-width: 350px;
+        }
+        
+        h1 {
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+
+        .toggleButton {
+            background-color: rgb(249, 249, 53);
+            position: relative;
+            border-radius: 25px;
+            border: 2px;
+            border-style: solid;
+            height: 2.5rem;
+            width: 5rem;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .toggleButton:hover {
+            box-shadow: 1px 1px 2px black, 0 0 10px blue, 0 0 2px darkblue;;
+        }
+
+        .half {
+            position: absolute;
+            width: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        #onLabel{
+            left: 5px;
+            text-align: left;
+        }
+
+        #offLabel {
+            right: 5px;
+            text-align: right;
+        }
+
+        .circle {
+            position: absolute;
+            background-color: rgb(73, 0, 163);
+            top: 0;
+            left: 0;
+            height: 40px;
+            width: 40px;
+            border-radius: 100%;            
+            z-index: 10;
+            pointer-events: none;
+            transition: 1s;
+        }
+
+        @keyframes transformToBlue {
+            0% {
+                background-color: rgb(249, 249, 53);
+            }
+
+            100% {
+                background-color: rgb(73, 0, 163);
+            }
+        }
+
+        @keyframes transformToYellow {
+            0% {
+                background-color: rgb(73, 0, 163);
+            }
+
+            100% {
+                
+                background-color: rgb(249, 249, 53);
+            }
+        }
+
+        @keyframes moveCircleRight {
+            0% {
+                left: 0;
+                transform: translateX(0%);
+                background-color: rgb(73, 0, 163);
+            }
+            100% {
+                left: 100%;
+                transform: translateX(-100%);
+                background-color: rgb(249, 249, 53);
+            }
+        }
+
+        @keyframes moveCircleLeft {
+            0% {
+                left: 100%;
+                transform: translateX(-100%);
+                background-color: rgb(249, 249, 53);
+                
+            }
+            100% {
+                left: 0;
+                transform: translateX(0%);
+                background-color: rgb(73, 0, 163);
+            }
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    
+    <div class="popup">
+        <h1><span class="">Dark mode</span></h1>
+        <p>
+            this extension allows you to turn most websites into dark mode and back.
+        </p>
+
+        <div class="toggleButton">
+            <div class="half" id="onLabel">On</div>
+            <div class="half" id="offLabel">Off</div>
+            <div class="circle"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+    "name": "Dark mode extension",
+    "description": "Extension for enabling dark mode in most tabs nad vice versa.",
+    "version": "0.3.0",
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "script.js"
+        ],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_title": "Dark mode extension",
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "https://*/*",
+        "http://*/*",
+        "tabs"
+    ]
+}
